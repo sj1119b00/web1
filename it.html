@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>자기소개서</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .container {
+      background-color: #ffffff;
+      width: 450px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
+
+    h3 {
+      text-align: center;
+      color: #333333;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 15px 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .img-box {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .img-box img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+    }
+
+    ol {
+      margin-top: 5px;
+      padding-left: 20px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: calc(100% - 10px);
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    input[type="submit"],
+    input[type="button"] {
+      padding: 10px 15px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    input[type="button"] {
+      background-color: #2196F3;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .naver-link {
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+      color: #1e88e5;
+    }
+    #menubar {
+      height: 40px; /* 높이 조정 */
+      background: linear-gradient(to right, #00695c, #26a69a);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+    }
+
+    #menubar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    #menubar ul li {
+      list-style: none;
+      padding: 8px 16px;  /* 패딩을 줄여서 슬림하게 */
+    }
+
+    #menubar ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 13px; /* 살짝 작게 */
+    }
+
+    #menubar ul li:hover {
+      background-color: #b2dfdb;
+      border-radius: 6px;
+    }
+
+    #menubar ul li:hover a {
+      color: #004d40;
+    }
+  </style>
+</head>
+<body>
+ 
+  <div class="container">
+    <nav id="menubar">
+      <ul>
+        <li><a href="it.html">Home</a></li>
+        <li><a href="ghl.html">회원가입</a></li>
+        <li><a href="#">기타</a></li>
+      </ul>
+    </nav>
+    <h3>자기 소개</h3>
+    <hr>
+    <div class="img-box">
+      <img src="https://yt3.ggpht.com/a/AATXAJwJVaxaLND49HhT5G2-H1rRWsehEG47R931vQ=s900-c-k-c0xffffffff-no-rj-mo" alt="profile1">
+      <img src="faceimg.JPG" alt="profile2">
+    </div>
+    <ul>
+      <li><strong>이름:</strong> 백승준</li>
+      <li><strong>취미:</strong> 낚시</li>
+      <li><strong>좋아하는 음식:</strong>
+        <ol>
+          <li>알리오 올리오 파스타</li>
+          <li>김치볶음밥</li>
+        </ol>
+      </li>
+      <li><strong>학번:</strong> 2506002</li>
+      <li><strong>학과:</strong> 미래인재학부</li>
+    </ul>
+
+    <h3>로그인 폼</h3>
+    <hr>
+    <form name="fo" method="get">
+      사용자 ID:<br>
+      <input type="text" name="user_id"><br>
+      비밀 번호:<br>
+      <input type="password" name="password"><br>
+      <input type="submit" value="로그인">
+      <a href="ghl.html"><input type="button" value="회원가입"></a>
+      <a href="http://www.naver.com" class="naver-link">밑줄 없는 네이버 링크</a>
+    </form>
+  </div>
+</body>
+</html>
