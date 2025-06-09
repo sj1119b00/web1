@@ -138,15 +138,31 @@
       color: #004d40;
     }
   </style>
+  <script>
+    // 2. 메뉴 마우스오버 스타일
+    function highlight(el) {
+     el.style.backgroundColor = "#ffe082";
+   }
+
+   function unhighlight(el) {
+     el.style.backgroundColor = "transparent";
+   }
+ </script>
 </head>
 <body>
  
   <div class="container">
     <nav id="menubar">
       <ul>
-        <li><a href="it.html">Home</a></li>
-        <li><a href="ghl.html">회원가입</a></li>
-        <li><a href="#">기타</a></li>
+        <li onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+          <a href="main.html">홈</a>
+        </li>
+        <li onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+          <a href="it.html">자기소개</a>
+        </li>
+        <li onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+          <a href="ghl.html">회원가입</a>
+        </li>
       </ul>
     </nav>
     <h3>자기 소개</h3>

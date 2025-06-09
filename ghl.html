@@ -123,14 +123,103 @@
     color: #004d40;
   }
   </style>
+  <script>
+    // 1. 페이지 로드되면 알림
+    function welcomeMessage() {
+      alert("회원가입 페이지에 오신 것을 환영합니다!");
+    }
+
+    // 2. 메뉴 마우스오버 스타일
+    function highlight(el) {
+      el.style.backgroundColor = "#ffe082";
+    }
+
+    function unhighlight(el) {
+      el.style.backgroundColor = "transparent";
+    }
+
+    // 3. 생년월일로 나이 계산
+    function calculateAge() {
+      // 입력된 생년월일 값 가져오기
+      var birthInput = document.getElementById("birth").value;
+      if (!birthInput) return; // 값이 없으면 함수 종료
+
+      // 생년월일과 오늘 날짜 객체 생성
+      var birthDate = new Date(birthInput);
+      var today = new Date();
+
+      // 생년월일에서 연, 월, 일 분리
+      var birthYear = birthDate.getFullYear();
+      var birthMonth = birthDate.getMonth();       // 월은 0부터 시작 (0 = 1월)
+      var birthDay = birthDate.getDate();
+
+      // 오늘 날짜에서 연, 월, 일 분리
+      var currentYear = today.getFullYear();
+      var currentMonth = today.getMonth();
+      var currentDay = today.getDate();
+
+      // 기본 나이 = 현재연도 - 태어난 연도
+      var age = currentYear - birthYear;
+
+      // 생일이 아직 안 지난 경우 나이 -1
+      if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDay < birthDay)) {
+        age--;
+      }
+
+      // 나이 출력: 오른쪽 텍스트 박스와 숨겨진 input 둘 다 반영
+      document.getElementById("calculated-age").value = age + "세";
+      document.getElementById("age").value = age;
+    }
+
+    function showAlert() {
+      var form = document.forms["fo"];
+      var userId = form.user_id.value;
+      var password = form.password.value;
+      var email = form.email.value;
+      var name = form.name.value;
+      var phone = form.phone.value;
+      var gender = form.gender.value;
+      var age = form.age.value;
+      var birth = form.birth.value;
+  
+      var hobbies = "";
+      var hobbyElements = form.querySelectorAll('input[name="hobby"]:checked');
+      for (var i = 0; i < hobbyElements.length; i++) {
+        hobbies += hobbyElements[i].value;
+        if (i < hobbyElements.length - 1) {
+          hobbies += ", ";
+        }
+      }
+  
+      var msg =
+        "회원가입 정보\n\n" +
+        "아이디: " + userId + "\n" +
+        "비밀번호: " + password + "\n" +
+        "이메일: " + email + "\n" +
+        "이름: " + name + "\n" +
+        "전화번호: " + phone + "\n" +
+        "성별: " + gender + "\n" +
+        "취미: " + hobbies + "\n" +
+        "나이: " + age + "\n" +
+        "생년월일: " + birth;
+  
+      alert(msg);
+    }
+  </script>
 </head>
-<body>
+<body onload="welcomeMessage()">
   <div class="signup-container">
     <nav id="menubar">
       <ul>
-        <li><a href="it.html">Home</a></li>
-        <li><a href="ghl.html">회원가입</a></li>
-        <li><a href="#">기타</a></li>
+        <li onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+          <a href="main.html">홈</a>
+        </li>
+        <li onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+          <a href="it.html">자기소개</a>
+        </li>
+        <li onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+          <a href="ghl.html">회원가입</a>
+        </li>
       </ul>
     </nav>
     <h3>회원가입 폼</h3>
@@ -168,11 +257,14 @@
       <input type="number" id="age" name="age">
 
       <label for="birth">생년월일</label>
-      <input type="date" id="birth" name="birth">
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <input type="date" id="birth" name="birth" onchange="calculateAge()">
+        <input type="text" id="calculated-age" readonly placeholder="자동 계산됨" style="width: 100px;">
+      </div>
 
       <div class="buttons">
         <input type="submit" value="로그인">
-        <input type="button" value="회원가입" onclick="location.href='ghl.html'">
+        <input type="button" value="회원가입" onclick="showAlert()">
       </div>
     </form>
   </div>

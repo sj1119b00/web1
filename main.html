@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>한성대학교 메인페이지</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background-color: #f4f6f9;
+    }
+
+    /* 상단 헤더 */
+    header {
+      background-color: #004d99;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* 메뉴바 */
+    #menubar {
+      height: 45px;
+      background: linear-gradient(to right, #00695c, #26a69a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    #menubar ul {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+
+    #menubar ul li {
+      padding: 10px 20px;
+    }
+
+    #menubar ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    #menubar ul li:hover {
+      background-color: #b2dfdb;
+      border-radius: 6px;
+    }
+
+    #menubar ul li:hover a {
+      color: #004d40;
+    }
+
+    /* 메인 콘텐츠 */
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .btn {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #388e3c;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      margin-top: 50px;
+      padding-bottom: 20px;
+    }
+    .event-list {
+        position: absolute;
+        top: 150px;
+        right: 30px;
+        width: 180px;
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .event-list h3 {
+        margin-top: 0;
+        font-size: 16px;
+        color: #333;
+        text-align: center;
+    }
+
+    .event-list ul {
+        list-style: square;
+        padding-left: 20px;
+        font-size: 14px;
+        color: #555;
+    }
+  </style>
+  <script>
+     // 2. 메뉴 마우스오버 스타일
+     function highlight(el) {
+      el.style.backgroundColor = "#ffe082";
+    }
+
+    function unhighlight(el) {
+      el.style.backgroundColor = "transparent";
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>한성대학교 홈페이지</h1>
+    <p>Welcome to Hansung University</p>
+  </header>
+
+  <nav id="menubar">
+    <ul>
+        <li onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+            <a href="main.html">홈</a>
+          </li>
+          <li onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+            <a href="it.html">자기소개</a>
+          </li>
+          <li onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+            <a href="ghl.html">회원가입</a>
+          </li>
+    </ul>
+  </nav>
+  <div class="event-list">
+    <h3>사용한 이벤트 함수</h3>
+    <ul>
+      <li>onload</li>
+      <li>onclick</li>
+      <li>onmouseover</li>
+      <li>onmouseout</li>
+      <li>onchange</li>
+    </ul>
+  </div>
+  <div class="container">
+    <h2>공지사항</h2>
+    <p>📢 한성대학교 홈페이지 입니다.</p>
+    <button class="btn" onclick="alert('클릭 이벤트 입니다.')">자세히 보기</button>
+  </div>
+
+  <footer>
+    ⓒ 2025 한성대학교. All rights reserved.
+  </footer>
+
+</body>
+</html>
